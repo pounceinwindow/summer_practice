@@ -19,10 +19,10 @@ class MainActivity : AppCompatActivity() {
     }
 }
 
-class Main
-{
-    fun main()
-    {
-        println("Hello World!")
-    }
-}
+//class Main
+//{
+//    fun main()
+//    {
+//        println("Hello World!")
+//    }
+//}
