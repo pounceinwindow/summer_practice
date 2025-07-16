@@ -7,6 +7,7 @@ import android.util.Patterns
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
@@ -82,7 +83,14 @@ class MainFragment : Fragment() {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
             override fun afterTextChanged(s: Editable?) {}
         })
-        binding.button.setOnClickListener { findNavController().navigate(R.id.action_mainFragment_to_avgFragment) }
+        binding.button.setOnClickListener {
+            val bundle = Bundle().apply {
+                putString("SampleKey", binding.emailet.text.toString())
+                putString("Sample1Key", binding.passBox.text.toString())
+            }
+
+            findNavController().navigate(R.id.action_mainFragment_to_avgFragment, bundle) }
+
     }
 
 
