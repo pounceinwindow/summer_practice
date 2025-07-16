@@ -1,11 +1,14 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.navigation.safe.args)
+    id("kotlin-parcelize")
 }
 
 android {
     namespace = "com.example.summerpractice"
     compileSdk = 36
+
 
     defaultConfig {
         applicationId = "com.example.summerpractice"
@@ -16,7 +19,10 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
-
+    buildFeatures {
+        viewBinding =  true
+        dataBinding = true
+    }
     buildTypes {
         release {
             isMinifyEnabled = false
@@ -45,4 +51,8 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    implementation(libs.androidx.fragment)
+    implementation(libs.navigation.fragment)
+    implementation(libs.navigation.ui)
+
 }
