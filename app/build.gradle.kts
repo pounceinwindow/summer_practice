@@ -7,6 +7,7 @@ android {
     namespace = "com.example.summerpractice"
     compileSdk = 36
 
+
     defaultConfig {
         applicationId = "com.example.summerpractice"
         minSdk = 24
@@ -16,7 +17,9 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
-
+    buildFeatures {
+        viewBinding =  true
+    }
     buildTypes {
         release {
             isMinifyEnabled = false
@@ -45,4 +48,8 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    implementation(libs.androidx.fragment)
+    implementation(libs.navigation.fragment)
+    implementation(libs.navigation.ui)
+
 }
