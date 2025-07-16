@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/main_fragment2">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="frag.MainFragment"
+        android:label="MainFragment" >
+        <action
+            android:id="@+id/action_mainFragment_to_avgFragment"
+            app:destination="@id/avgFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_avgFragment2"
+            app:destination="@id/avgFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/main_fragment2"
+        android:name="frag.MainFragment2"
+        android:label="MainFragment2" >
+        <action
+            android:id="@+id/action_main_fragment2_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/avgFragment"
+        android:name="frag.AvgFragment"
+        android:label="AvgFragment" />
+
+</navigation>
