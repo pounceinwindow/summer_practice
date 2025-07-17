@@ -1,6 +1,5 @@
 package com.example.summerpractice.fragment
 
-
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.summerpractice.R
 import com.example.summerpractice.adapt.CatAdapter
 import com.example.summerpractice.databinding.FragmentCatListBinding
 import com.example.summerpractice.model.CatModel
@@ -37,8 +37,10 @@ class CatListFragment : Fragment() {
         adapter = CatAdapter(
             catList,
             onItemClicked = { cat ->
-                val action = CatListFragmentDirections.actionToDetails(cat)
-                findNavController().navigate(action)
+                val bundle = Bundle().apply {
+                    putParcelable("catModel", cat)
+                }
+                findNavController().navigate(R.id.action_to_details, bundle)
             },
             onImageClicked = { updatedCat ->
             }

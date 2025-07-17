@@ -5,15 +5,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.navArgs
 import com.example.summerpractice.databinding.FragmentCatDetailBinding
+import com.example.summerpractice.model.CatModel
+import com.example.summerpractice.util.CatGenerator.images
 
 class CatDetailFragment : Fragment() {
 
     private var _binding: FragmentCatDetailBinding? = null
     private val binding get() = _binding!!
-
-    private val args: CatDetailFragmentArgs by navArgs()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -26,10 +25,13 @@ class CatDetailFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val cat = args.catModel
-        binding.imageView.setImageResource(cat.imageResId)
-        binding.titleText.text = cat.title
-        binding.descriptionText.text = cat.description
+
+        val cat = arguments?.getParcelable<CatModel>("catModel")
+        cat?.let {
+            binding.catImage.setImageResource(images.random())
+            binding.titleText.text = it.title
+            binding.descText.text = it.description
+        }
     }
 
     override fun onDestroyView() {

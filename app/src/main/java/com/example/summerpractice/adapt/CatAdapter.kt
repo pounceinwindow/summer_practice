@@ -16,13 +16,14 @@ class CatAdapter(
         fun bind(cat: CatModel) {
             binding.titleText.text = cat.title
             binding.descText.text = cat.description
+            binding.idshnik.text = cat.id.toString()
             binding.catImage.setImageResource(cat.imageResId)
 
             binding.root.setOnClickListener { onItemClicked(cat) }
             binding.catImage.setOnClickListener {
                 cat.imageResId = CatGenerator.getRandomImage()
                 notifyItemChanged(adapterPosition)
-                onImageClicked(cat) // Optional: if you want to sync with model holder
+                onImageClicked(cat)
             }
         }
     }

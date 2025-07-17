@@ -4,9 +4,9 @@ import com.example.summerpractice.R
 import com.example.summerpractice.model.CatModel
 
 object CatGenerator {
-    private val titles = listOf("First", "Second", "Third", "Fourth", "Fifth", "Sixth")
-    private val descriptions = listOf("First cat description", "Second cat description", "Third cat description", "Fourth cat description", "Fifth cat description", "Sixth cat description")
-    private val images = listOf(
+    private val titles = listOf("Первый", "(4)Второй", "Third", "Fourth", "Fifth", "Sixth")
+    private val descriptions = listOf("First cat description", "42 братуха", "Third cat description", "Fourth cat description", "Fifth cat description", "Sixth cat description")
+    val images = listOf(
         R.drawable.cat1,
         R.drawable.cat2,
         R.drawable.cat3,
